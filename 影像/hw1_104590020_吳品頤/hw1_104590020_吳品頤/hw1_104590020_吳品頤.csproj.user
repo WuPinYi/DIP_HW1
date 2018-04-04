@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ReferencePath>C:\libemgucv-windesktop-3.1.0.2504-r16.12\bin\;C:\libemgucv-windesktop-3.1.0.2504-r16.12\bin\x64\</ReferencePath>
+  </PropertyGroup>
+</Project>

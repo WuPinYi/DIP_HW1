@@ -1,0 +1,14 @@
+\\Mac\Home\Desktop\影像\hw1_104590020_吳品頤\hw1_104590020_吳品頤\bin\x64\Debug\hw1_104590020_吳品頤.exe.config
+\\Mac\Home\Desktop\影像\hw1_104590020_吳品頤\hw1_104590020_吳品頤\bin\x64\Debug\hw1_104590020_吳品頤.exe
+\\Mac\Home\Desktop\影像\hw1_104590020_吳品頤\hw1_104590020_吳品頤\bin\x64\Debug\hw1_104590020_吳品頤.pdb
+\\Mac\Home\Desktop\影像\hw1_104590020_吳品頤\hw1_104590020_吳品頤\bin\x64\Debug\Emgu.CV.UI.dll
+\\Mac\Home\Desktop\影像\hw1_104590020_吳品頤\hw1_104590020_吳品頤\bin\x64\Debug\Emgu.CV.World.dll
+\\Mac\Home\Desktop\影像\hw1_104590020_吳品頤\hw1_104590020_吳品頤\bin\x64\Debug\ZedGraph.dll
+\\Mac\Home\Desktop\影像\hw1_104590020_吳品頤\hw1_104590020_吳品頤\bin\x64\Debug\Emgu.CV.UI.xml
+\\Mac\Home\Desktop\影像\hw1_104590020_吳品頤\hw1_104590020_吳品頤\bin\x64\Debug\Emgu.CV.World.xml
+\\Mac\Home\Desktop\影像\hw1_104590020_吳品頤\hw1_104590020_吳品頤\obj\x64\Debug\hw1_104590020_吳品頤.csprojResolveAssemblyReference.cache
+\\Mac\Home\Desktop\影像\hw1_104590020_吳品頤\hw1_104590020_吳品頤\obj\x64\Debug\hw1_104590020_吳品頤.Form1.resources
+\\Mac\Home\Desktop\影像\hw1_104590020_吳品頤\hw1_104590020_吳品頤\obj\x64\Debug\hw1_104590020_吳品頤.Properties.Resources.resources
+\\Mac\Home\Desktop\影像\hw1_104590020_吳品頤\hw1_104590020_吳品頤\obj\x64\Debug\hw1_104590020_吳品頤.csproj.GenerateResource.Cache
+\\Mac\Home\Desktop\影像\hw1_104590020_吳品頤\hw1_104590020_吳品頤\obj\x64\Debug\hw1_104590020_吳品頤.exe
+\\Mac\Home\Desktop\影像\hw1_104590020_吳品頤\hw1_104590020_吳品頤\obj\x64\Debug\hw1_104590020_吳品頤.pdb
