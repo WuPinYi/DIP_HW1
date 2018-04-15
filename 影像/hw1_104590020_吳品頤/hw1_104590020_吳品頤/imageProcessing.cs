@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 using System.Runtime.InteropServices;
 using Emgu.CV;
@@ -61,16 +61,16 @@ namespace hw1_104590020_吳品頤
         public static Image<Bgr, Byte> Rotating(Image<Bgr, Byte> source, double theta)
         {
             Image<Bgr, Byte> result = new Image<Bgr, Byte>(source.Width, source.Height);
-            double r = Math.Sqrt(Math.Pow((double)source.Width / 2d, 2d) + Math.Pow((double)source.Height / 2d, 2d)); //半徑L
-            double OriginalAngle = Math.Acos((source.Width / 2d) / r) / Math.PI * 180d;  //對角線和X軸的角度θ
-            double minW = 0d, maxW = 0d, minH = 0d, maxH = 0d; //最大和最小的 X、Y座標
+            double r = Math.Sqrt(Math.Pow((double)source.Width / 2d, 2d) + Math.Pow((double)source.Height / 2d, 2d));
+            double OriginalAngle = Math.Acos((source.Width / 2d) / r) / Math.PI * 180d;
+            double minW = 0d, maxW = 0d, minH = 0d, maxH = 0d;
             double[] drawPoint = new double[4];
             drawPoint[0] = (-OriginalAngle + theta) * Math.PI / 180d;
             drawPoint[1] = (OriginalAngle + theta) * Math.PI / 180d;
             drawPoint[2] = (180f - OriginalAngle + theta) * Math.PI / 180d;
             drawPoint[3] = (180f + OriginalAngle + theta) * Math.PI / 180d;
 
-            foreach (double point in drawPoint) //由四個角的點算出X、Y的最大值及最小值
+            foreach (double point in drawPoint)
             {
                 double x = r * Math.Cos(point);
                 double y = r * Math.Sin(point);
@@ -151,17 +151,15 @@ namespace hw1_104590020_吳品頤
                     g = (int)source.Data[y, x, 1];  //G
                     r = (int)source.Data[y, x, 2];  //R
                     int grayColor = (int)(b * 0.114 + g * 0.587 + r * 0.299);
-                    PixArr[y * cols + x] = grayColor;            //设置像素数组
+                    PixArr[y * cols + x] = grayColor;
                     GrayArr[PixArr[y * cols + x]]++;
                 }
             }
 
-            double u0;  //背景灰度均值
-            double u1;  //前景灰度均值
-            double maxVal = 0;  //类间方差最大值
+            double u0, u1;
+            double maxVal = 0;
             int endval = 0;
-            double w0;  //背景灰度概率
-            double w1;  //前景灰度概率
+            double w0, w1;
 
             for (int i = 0; i < GrayNum; i++)
             {
@@ -171,7 +169,7 @@ namespace hw1_104590020_吳品頤
                 {
                     if (j <= i)
                     {
-                        w0 += GrayArr[j] / (PixNum * 1.0);  //每种灰度的概率
+                        w0 += GrayArr[j] / (PixNum * 1.0);
                         u0 += GrayArr[j] / (PixNum * 1.0) * j;
                     }
                     else
@@ -188,7 +186,7 @@ namespace hw1_104590020_吳品頤
                 if (maxVal < vala)
                 {
                     maxVal = vala;
-                    endval = i;  //阈值
+                    endval = i;
                 }
             }
 
@@ -267,13 +265,14 @@ namespace hw1_104590020_吳品頤
                         byte original = source.Data[y, x, j];
                         int min = 0;
 
+                        // 求CDF Min
                         for (int i = 0; i < 255; i++)
                             if (cdf[j, i] > min) min = cdf[j, i];
 
                         for (int i = 0; i < 255; i++)
                         {
-                            if (pdf[j, i] != 0)
-                                if (cdf[j, i] < min) min = cdf[j, i];
+                            if (pdf[j, i] != 0 && cdf[j, i] < min)
+                                min = cdf[j, i];
                         }
 
                         result.Data[y, x, j] = H(cdf[j, original], min, rows, cols);
@@ -285,7 +284,7 @@ namespace hw1_104590020_吳品頤
         }
         private static byte H(int cdf, int cdfMin, int m, int n)  // m: 長, n: 寬
         {
-            double num = ((cdf - cdfMin) * 255 / ((m * n) - cdfMin)) ;
+            double num = (cdf - cdfMin) * 255 / ((m * n) - cdfMin) ;
             return (byte)Math.Round(num);
         }
     }
